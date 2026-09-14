@@ -1,0 +1,3 @@
+[test]
+coveragePathIgnorePatterns = ["src/generated/**"]
+coverageThreshold = { lines = 0.80, functions = 0.80 }

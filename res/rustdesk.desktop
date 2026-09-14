@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=SubnetDesk
+GenericName=Remote Desktop
+Comment=LAN/VPN Remote Desktop
+Exec=subnetdesk %u
+Icon=subnetdesk
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Network;RemoteAccess;GTK;
+Keywords=lan;vpn;linux;dart;rust;remote-control;rust-lang;rdp;remote-desktop;vnc;
+Actions=new-window;
+StartupWMClass=subnetdesk
+
+X-Desktop-File-Install-Version=0.23
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=subnetdesk %u

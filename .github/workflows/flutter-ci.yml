@@ -1,0 +1,23 @@
+name: SubnetDesk Installers CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+    - "docs/**"
+    - "README.md"
+    - ".github/workflows/ci.yml"
+
+concurrency:
+  group: subnetdesk-flutter-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-pr-ci:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/flutter-build.yml
+    with:
+      upload-artifact: true
+      publish-release: false
+      build-mobile: false

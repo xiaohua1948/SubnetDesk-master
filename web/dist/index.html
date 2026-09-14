@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>SubnetDesk Web</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main id="connect-panel" class="shell">
+      <h1 data-i18n="title">SubnetDesk Web</h1>
+      <p class="device"><span data-i18n="remoteAccess">远程访问</span> <strong id="device-name" data-i18n="deviceLoading">正在读取设备…</strong></p>
+      <form id="login-form" autocomplete="off">
+        <label for="username" data-i18n="username">访问用户名</label>
+        <input id="username" name="username" maxlength="64" required autocomplete="username">
+        <label for="password" data-i18n="password">访问密码</label>
+        <input id="password" name="password" type="password" maxlength="256" required autocomplete="off">
+        <button id="connect" class="primary" type="submit" data-i18n="connect" disabled>连接此电脑</button>
+      </form>
+      <p id="status" aria-live="polite" data-i18n="initializing">正在初始化…</p>
+      <aside id="trust-panel" class="trust" hidden>
+        <strong data-i18n="firstTrust">首次访问需要信任本机证书</strong>
+        <span data-i18n="trustHelp">请核对下方设备指纹，并将本机 CA 安装到受信任证书存储。</span>
+        <a id="ca-certificate" href="/api/ca-certificate" data-i18n="downloadCa" download>下载本机 CA 证书</a>
+      </aside>
+      <p class="fingerprint"><span data-i18n="fingerprint">设备指纹：</span> <span id="fingerprint">—</span></p>
+    </main>
+    <section id="viewer-panel" hidden>
+      <div class="toolbar">
+        <span id="viewer-status" data-i18n="connected">已连接</span>
+        <span id="connection-stats" class="stats"></span>
+        <select id="display" aria-label="显示器" data-i18n-aria-label="display" hidden></select>
+        <select id="quality" aria-label="画质" data-i18n-aria-label="quality">
+          <option value="2" data-i18n="smooth">流畅</option>
+          <option value="3" data-i18n="balanced" selected>均衡</option>
+          <option value="4" data-i18n="best">最佳</option>
+        </select>
+        <button id="clipboard-read" type="button" data-i18n="pasteRemote" hidden>粘贴到远端</button>
+        <button id="clipboard-write" type="button" data-i18n="copyRemote" hidden>复制远端内容</button>
+        <input id="text-input" class="text-input" aria-label="发送文字" data-i18n-aria-label="sendText" data-i18n-placeholder="textPlaceholder" placeholder="输入文字或使用输入法">
+        <button id="send-text" type="button" data-i18n="sendText">发送文字</button>
+        <button id="fullscreen" type="button" data-i18n="fullscreen">全屏</button>
+        <button id="disconnect" type="button" data-i18n="disconnect">断开</button>
+      </div>
+      <canvas id="screen" tabindex="0" aria-label="远程桌面" data-i18n-aria-label="screen"></canvas>
+    </section>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

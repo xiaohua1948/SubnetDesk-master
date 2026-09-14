@@ -1,0 +1,195 @@
+name: flutter_hbb
+description: SubnetDesk LAN-only remote desktop
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# 1.1.9-1 works for android, but for ios it becomes 1.1.91, need to set it to 1.1.9-a.1 for iOS, will get 1.1.9.1, but iOS store not allow 4 numbers
+version: 1.3.0+75
+
+environment:
+  sdk: '^3.12.0'
+  flutter: '>=3.44.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  ffi: ^2.1.0
+  path_provider: ^2.1.1
+  external_path: ^2.2.0
+  provider: ^6.0.5
+  tuple: ^2.0.0
+  wakelock_plus: 1.5.1
+  #firebase_analytics: ^9.1.5
+  package_info_plus: ^9.0.0
+  url_launcher: ^6.3.1
+  url_launcher_ios: ^6.3.2
+  toggle_switch: ^2.1.0
+  dash_chat_2:
+    git:
+      url: https://github.com/rustdesk-org/Dash-Chat-2
+  draggable_float_widget: ^0.1.0
+  settings_ui: ^2.0.2
+  flutter_breadcrumb: ^1.0.1
+  http: ^1.1.0
+  zxing2: ^0.2.0
+  image_picker: ^1.1.2
+  image: ^4.0.17
+  back_button_interceptor: ^6.0.1
+  flutter_rust_bridge: "1.80.1"
+  window_manager:
+    git:
+      url: https://github.com/rustdesk-org/window_manager
+  desktop_multi_window:
+    git:
+      url: https://github.com/rustdesk-org/rustdesk_desktop_multi_window
+  freezed_annotation: ^2.0.3
+  flutter_custom_cursor: ^0.0.4
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
+      ref: eb3964990cf19629c89ff8cb4a37640c7b3d5601
+  get: ^4.6.5
+  visibility_detector: ^0.4.0+2
+  contextmenu: ^3.0.0
+  desktop_drop: ^0.7.1
+  scroll_pos: ^0.4.0
+  debounce_throttle: ^2.0.0
+  file_picker: ^11.0.2
+  flutter_svg: ^2.0.5
+  app_links: ^7.2.1
+  path: ^1.8.1
+  auto_size_text: ^3.0.0
+  bot_toast: ^4.0.3
+  win32: any
+  password_strength: ^0.2.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_keyboard_visibility: ^6.0.0
+  texture_rgba_renderer:
+    git:
+      url: https://github.com/rustdesk-org/flutter_texture_rgba_renderer
+      ref: 883326ddd4fb2af1484bf873b4ea856a0ac440bc
+  percent_indicator: ^4.2.2
+  dropdown_button2: ^2.0.0
+  flutter_gpu_texture_renderer:
+    git:
+      url: https://github.com/rustdesk-org/flutter_gpu_texture_renderer
+      ref: 208619e750a5fd904c689a9babd6ccf0f7c1ca88
+  uuid: ^3.0.7
+  auto_size_text_field: ^2.2.1
+  flex_color_picker: ^3.3.0
+  dynamic_layouts:
+    git:
+      url: https://github.com/rustdesk-org/dynamic_layouts.git
+      ref: 24cb88413fa5181d949ddacbb30a65d5c459e7d9
+  pull_down_button: ^0.9.3
+  device_info_plus: 11.3.0
+  qr_flutter: ^4.1.0
+  extended_text: 15.0.2
+  xterm: 4.0.0
+  sqflite: ^2.4.3
+  google_fonts: ^8.1.0
+  vector_math: ^2.1.4
+
+dev_dependencies:
+  icons_launcher: ^2.0.4
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.6
+  freezed: ^2.4.2
+  flutter_lints: ^2.0.2
+  ffigen: ^8.0.2
+
+dependency_overrides:
+  intl: ^0.19.0
+  flutter_plugin_android_lifecycle: 2.0.35
+
+# rerun: flutter pub run flutter_launcher_icons
+flutter_icons:
+  image_path: "../res/icon.png"
+  remove_alpha_ios: true
+  android: true
+  ios: true
+  windows:
+    generate: true
+  macos:
+    image_path: "../res/mac-icon.png"
+    generate: true
+  linux: true
+  web:
+    generate: true
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+
+  fonts:
+    - family: GestureIcons
+      fonts:
+        - asset: assets/gestures.ttf
+    - family: Tabbar
+      fonts:
+        - asset: assets/tabbar.ttf
+    - family: PeerSearchbar
+      fonts:
+        - asset: assets/peer_searchbar.ttf
+    - family: AddressBook
+      fonts:
+        - asset: assets/address_book.ttf
+    - family: DeviceGroup
+      fonts:
+        - asset: assets/device_group.ttf
+    - family: More
+      fonts:
+        - asset: assets/more.ttf
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
