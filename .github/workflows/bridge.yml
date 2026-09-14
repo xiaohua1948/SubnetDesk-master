@@ -31,6 +31,14 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Use the GitHub mirror for chromium.googlesource.com
+        # chromium.googlesource.com intermittently answers HTTP 502 to GitHub
+        # runners when cargo resolves the `webm` git dependency of `libs/scrap`
+        # (its submodule points at chromium.googlesource.com/webm/libwebm).
+        # Redirect it to the official mirror so the fetch cannot fail this way.
+        run: |
+          git config --global url."https://github.com/webmproject/libwebm.git".insteadOf "https://chromium.googlesource.com/webm/libwebm"
+
       - name: Install prerequisites
         run: |
           sudo apt-get install ca-certificates -y
