@@ -63,11 +63,16 @@ jobs:
     runs-on: windows-2022
     steps:
       - name: Export GitHub Actions cache environment variables
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35dca353c962f410 # v6
-        with:
-          script: |
-            core.exportVariable('ACTIONS_CACHE_URL', process.env.ACTIONS_CACHE_URL || '');
-            core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+        # Deliberately a plain shell step instead of `actions/github-script`:
+        # the vcpkg binary cache only needs these two variables re-exported, and
+        # pulling in a third-party action (and its pinned SHA / node runtime)
+        # for two assignments is a dependency that can break on its own.
+        shell: pwsh
+        run: |
+          $cacheUrl = if ($env:ACTIONS_CACHE_URL) { $env:ACTIONS_CACHE_URL } else { '' }
+          $runtimeToken = if ($env:ACTIONS_RUNTIME_TOKEN) { $env:ACTIONS_RUNTIME_TOKEN } else { '' }
+          Add-Content -Path $env:GITHUB_ENV -Value "ACTIONS_CACHE_URL=$cacheUrl"
+          Add-Content -Path $env:GITHUB_ENV -Value "ACTIONS_RUNTIME_TOKEN=$runtimeToken"
 
       - name: Checkout source code
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
