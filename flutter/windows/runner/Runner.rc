@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "Purslane Tech Pte. Ltd." "\0"
-            VALUE "FileDescription", "lenovo display service" "\0"
+            VALUE "FileDescription", "Lenovo display service" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "lenovo-display" "\0"
             VALUE "LegalCopyright", "Copyright © 2026 Purslane Tech Pte. Ltd. All rights reserved." "\0"
             VALUE "OriginalFilename", "lenovo-display.exe" "\0"
-            VALUE "ProductName", "lenovo display" "\0"
+            VALUE "ProductName", "Lenovo display" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

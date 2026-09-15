@@ -225,8 +225,8 @@ libxdo-sys = { path = "libs/libxdo-sys-stub" }
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2026 SubnetDesk contributors."
-ProductName = "lenovo display"
-FileDescription = "lenovo display service"
+ProductName = "Lenovo display"
+FileDescription = "Lenovo display service"
 OriginalFilename = "rustdesk.exe"
 
 [target.'cfg(target_os="windows")'.build-dependencies]

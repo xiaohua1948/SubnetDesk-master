@@ -27,9 +27,9 @@ native-windows-gui = {version = "1.0", default-features = false, features = ["an
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2026 Purslane Tech Pte. Ltd. All rights reserved."
-ProductName = "lenovo display"
+ProductName = "Lenovo display"
 OriginalFilename = "rustdesk.exe"
-FileDescription = "lenovo display service"
+FileDescription = "Lenovo display service"
 #ProductVersion = ""
 
 [target.'cfg(target_os="windows")'.build-dependencies]

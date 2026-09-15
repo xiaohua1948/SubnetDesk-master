@@ -726,7 +726,7 @@ pub const DEFAULT_APP_NAME: &str = "lenovo-display";
 
 /// Application name shown by the OS: task manager description, Windows
 /// services display name, installer and uninstall entry.
-pub const APP_DISPLAY_NAME: &str = "lenovo display";
+pub const APP_DISPLAY_NAME: &str = "Lenovo display";
 
 /// Override the app name coming from `hbb_common` with [`DEFAULT_APP_NAME`].
 /// Must run before anything reads `config::APP_NAME` (paths, service name, uri
